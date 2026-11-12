@@ -53,6 +53,7 @@ flowchart TD
 | Tri thức + vector | Neo4j (vector index cosine) | Neo4j AuraDB |
 | Frontend | Next.js (App Router, TypeScript) | Vercel |
 | DevOps | Docker + GitHub Actions | GitHub |
+| Migration DB | Flyway (SQL thuần, `database/postgres/`) | chạy trong CI và trước mỗi lần deploy |
 | Monitoring | Langfuse / LangSmith (chỉ dữ liệu đã ẩn PII) | Cloud / self-host |
 
 Bảng stack gợi ý của chương trình có pgvector/ChromaDB. Dự án dùng Neo4j theo D1 vì cần lọc theo graph nguồn trong cùng một truy vấn.

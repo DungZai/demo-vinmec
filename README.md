@@ -66,7 +66,6 @@ Chi tiết: [docs/architecture.md](docs/architecture.md) · [docs/safety_protoco
 │   │   ├── db/                  kết nối Postgres, Neo4j; bảng SQLAlchemy
 │   │   ├── repositories/        users · sessions · safety_events · cases · screenings · mood · consent
 │   │   └── observability/       Langfuse / LangSmith
-│   ├── migrations/versions/     Alembic
 │   ├── scripts/                 nạp tri thức, tạo tài khoản mẫu, chạy bộ eval an toàn
 │   └── tests/
 │       ├── unit/                keyword · tiering · C-SSRS · PHQ/GAD · output guard
@@ -82,6 +81,11 @@ Chi tiết: [docs/architecture.md](docs/architecture.md) · [docs/safety_protoco
 │       ├── components/          safety · chat · screening · journal · clinician · layout
 │       ├── lib/                 gọi API, auth, hotline dự phòng, kết nối real-time
 │       └── types/               kiểu dữ liệu khớp backend/app/schemas
+├── database/
+│   └── postgres/                quản lý phiên bản schema bằng Flyway
+│       ├── migrations/          V<số>__<mô_tả>.sql — chạy một lần, không sửa sau khi đã chạy
+│       ├── repeatable/          R__<tên>.sql — view, function, policy; chạy lại khi nội dung đổi
+│       └── seed/                dữ liệu tổng hợp cho dev/test, không chạy ở prod
 ├── data/                        nội dung được duyệt, tách khỏi code
 │   ├── safety/                  từ điển khủng hoảng · hotline · luật output guard
 │   ├── templates/               câu trả lời cố định · C-SSRS · PHQ-9 · GAD-7
@@ -94,6 +98,32 @@ Chi tiết: [docs/architecture.md](docs/architecture.md) · [docs/safety_protoco
 ```
 
 Mọi nội dung liên quan đến an toàn (từ điển, template, hotline, prompt) nằm trong `data/` để chuyên gia duyệt mà không cần đọc code.
+
+## Quản lý phiên bản database (Flyway)
+
+Flyway là nguồn sự thật duy nhất cho schema Postgres. Không dùng thêm Alembic hay `supabase db push` để tránh hai công cụ cùng sửa schema.
+
+**Quy ước**
+
+- Mỗi tính năng cần đổi schema thì thêm **một file mới** trong `database/postgres/migrations/`, ví dụ:
+  - `V1__init_users_sessions.sql`
+  - `V2__safety_events_cases.sql`
+  - `V3__mood_entries.sql`
+  - `V4__emergency_contacts_encrypt_phone.sql`
+- Không sửa file `V…` đã chạy ở bất kỳ môi trường nào. Muốn sửa thì viết file `V…` mới. Flyway so checksum và sẽ báo lỗi nếu file cũ bị đổi.
+- Không xóa cột hay bảng trong cùng bản phát hành với code ngừng dùng nó. Làm hai bước: phát hành code trước, migration xóa sau.
+- View cho hàng đợi chuyên gia, function và policy phân quyền đặt ở `repeatable/` (`R__…`).
+- Dữ liệu mẫu trong `seed/` chỉ được đưa vào `locations` ở môi trường dev/test.
+- Bảng checkpoint của LangGraph do thư viện tự tạo, nên đặt trong schema riêng (ví dụ `langgraph`) và loại khỏi Flyway.
+- Bảng SQLAlchemy trong `backend/app/db/` phải khớp với migration. Test integration chạy migration trên Postgres trống rồi so với model.
+
+**Trong CI/CD**
+
+- Mỗi PR chạy `flyway validate` rồi `flyway migrate` trên Postgres tạm. Sau đó mới chạy test backend.
+- Khi deploy, chạy `flyway migrate` vào Supabase **trước** khi khởi động backend mới.
+- Flyway bản miễn phí không có undo migration. Muốn hoàn tác thì viết migration `V…` mới.
+
+Neo4j không thuộc phạm vi Flyway. Constraint và vector index của Neo4j được tạo lại bằng script nạp tri thức (idempotent, dùng `IF NOT EXISTS`).
 
 ## Lộ trình 12/11 → 25/11
 
