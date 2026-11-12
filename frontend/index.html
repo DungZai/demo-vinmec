@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>An Tâm — Trợ lý sức khỏe tinh thần</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="An Tâm trang chủ"><span class="brand-mark">a</span><span>An Tâm<small>ĐỒNG HÀNH SỨC KHỎE TINH THẦN</small></span></a>
+    <div class="header-right"><span class="demo-pill"><i></i> BẢN DEMO · OFFLINE</span><button id="role-toggle" class="role-toggle" type="button">Chuyển sang Chuyên gia</button></div>
+  </header>
+  <div class="safety-strip"><span class="safety-icon">✳</span><span>Đây là công cụ tự chăm sóc mô phỏng, không chẩn đoán hay thay chuyên gia. Dữ liệu sức khỏe thật không nên nhập vào bản demo này.</span><button id="safety-more" type="button">Giới hạn</button></div>
+
+  <main class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-label">KHÔNG GIAN CỦA BẠN</div>
+      <nav id="user-nav" class="nav-list" aria-label="Khu vực người dùng">
+        <button class="nav-item active" data-panel="home"><span>◌</span> Đồng hành</button>
+        <button class="nav-item" data-panel="mood"><span>◷</span> Nhật ký cảm xúc</button>
+        <button class="nav-item" data-panel="screening"><span>⊙</span> Check-in tâm trạng</button>
+        <button class="nav-item" data-panel="library"><span>✳</span> Bài tập tự chăm sóc</button>
+        <button class="nav-item" data-panel="clinical"><span>⌕</span> Công cụ an toàn</button>
+      </nav>
+      <nav id="clinician-nav" class="nav-list hidden" aria-label="Khu vực chuyên gia">
+        <button class="nav-item active" data-panel="inbox"><span>▤</span> Hàng đợi cảnh báo</button>
+        <button class="nav-item" data-panel="clinical"><span>⌕</span> Công cụ an toàn</button>
+      </nav>
+      <div class="side-spacer"></div>
+      <div class="consent-card">
+        <div class="consent-title">Chia sẻ trong tình huống khẩn</div>
+        <p>Chọn đồng ý để ghi nhận sự cho phép trong demo. Không có tin nhắn hay liên hệ thật được gửi.</p>
+        <label class="switch-line"><input id="contact-consent" type="checkbox"><span>Tôi đồng ý mô phỏng chia sẻ cảnh báo</span></label>
+      </div>
+      <div class="side-foot">Bản thử nghiệm VMEC-20<br>Thông tin không được giám sát trực tiếp</div>
+    </aside>
+
+    <section class="content">
+      <section id="panel-home" class="panel">
+        <div class="welcome-row"><div><div class="eyebrow"><span id="today-date"></span></div><h1>Mình ở đây cùng bạn.</h1><p class="lede">Bạn không cần phải có câu trả lời ngay. Bắt đầu từ điều đang hiện diện với bạn lúc này.</p></div><div class="welcome-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-one"></div><div class="hill hill-two"></div><span>một nhịp<br>một lúc</span></div></div>
+        <div class="notice-card"><span class="notice-dot"></span><div><strong>Một không gian lắng nghe, không phán xét</strong><p>Chia sẻ vừa đủ với bạn. Nếu bạn đang ở trong nguy hiểm tức thời, hãy gọi <a href="tel:115">115 (cấp cứu y tế)</a> hoặc đến cơ sở cấp cứu gần nhất.</p></div></div>
+        <div class="section-heading"><div><div class="eyebrow">BẮT ĐẦU TỪ ĐÂU</div><h2>Hôm nay bạn muốn gì?</h2></div></div>
+        <div class="quick-grid">
+          <button class="quick-card" data-go="mood"><span class="quick-icon lavender">◷</span><strong>Ghi lại cảm xúc</strong><small>Một check-in ngắn với chính mình</small><b>→</b></button>
+          <button class="quick-card" data-go="screening"><span class="quick-icon peach">⊙</span><strong>Check-in tâm trạng</strong><small>Bản mô phỏng, không phải chẩn đoán</small><b>→</b></button>
+          <button class="quick-card" data-go="library"><span class="quick-icon mint">✳</span><strong>Thử một bài tập</strong><small>Grounding, thở nhẹ, viết xuống</small><b>→</b></button>
+        </div>
+        <div class="section-heading chat-heading"><div><div class="eyebrow">CUỘC TRÒ CHUYỆN</div><h2>Điều gì đang ở trong tâm trí bạn?</h2></div><span class="private-label">Không lưu nội dung chat</span></div>
+        <div id="chat-box" class="chat-box" aria-live="polite"><div class="chat-message assistant"><span class="avatar">a</span><div><span class="message-label">An Tâm · bản demo</span><p>Chào bạn. Mình có thể lắng nghe, gợi ý một bài tự chăm sóc ngắn hoặc giúp bạn tìm hỗ trợ. Bạn muốn kể điều gì đang diễn ra?</p></div></div></div>
+        <form id="chat-form" class="chat-form"><textarea id="chat-input" rows="2" maxlength="4000" placeholder="Viết điều bạn muốn chia sẻ…" aria-label="Tin nhắn"></textarea><button type="submit" class="send-button" aria-label="Gửi tin nhắn">↑</button><div class="form-foot">Tránh ghi tên, số điện thoại hoặc thông tin nhận dạng. Phản hồi dùng mẫu offline, không dùng LLM. <button id="crisis-example" class="text-button" type="button">Kịch bản diễn tập (giả lập)</button></div></form>
+        <div class="exercise-inline"><div><span class="quick-icon mint">✳</span><div><strong>Thử 60 giây trở về hiện tại</strong><small>Nhìn quanh và gọi tên điều bạn đang thấy, nghe, cảm nhận.</small></div></div><button data-go="library" class="text-button">Mở bài tập →</button></div>
+      </section>
+
+      <section id="panel-mood" class="panel hidden">
+        <div class="eyebrow">NHẬT KÝ RIÊNG TƯ</div><h1>Một chút để ý đến mình.</h1><p class="lede">Ghi lại cảm xúc có thể giúp bạn nhìn thấy xu hướng theo thời gian. Dữ liệu này chỉ lưu trong trình duyệt hiện tại.</p>
+        <div class="surface mood-entry"><h2>Hôm nay mình cảm thấy…</h2><div class="mood-scale" role="radiogroup" aria-label="Mức cảm xúc hôm nay">
+          <label><input type="radio" name="mood" value="1"><span>😞</span><small>Rất nặng</small></label><label><input type="radio" name="mood" value="2"><span>🙁</span><small>Khó khăn</small></label><label><input type="radio" name="mood" value="3"><span>😐</span><small>Bình thường</small></label><label><input type="radio" name="mood" value="4"><span>🙂</span><small>Khá ổn</small></label><label><input type="radio" name="mood" value="5"><span>😊</span><small>Tốt</small></label>
+        </div><div class="tag-row"><span class="muted">Điều đang hiện diện (tùy chọn)</span><label><input type="checkbox" value="học tập"> Học tập</label><label><input type="checkbox" value="công việc"> Công việc</label><label><input type="checkbox" value="ngủ nghỉ"> Ngủ nghỉ</label><label><input type="checkbox" value="mối quan hệ"> Mối quan hệ</label></div><button id="save-mood" class="primary-button">Lưu check-in</button><button id="clear-moods" class="quiet-button">Xóa nhật ký trên thiết bị này</button></div>
+        <div class="surface trend-surface"><div class="section-heading"><div><div class="eyebrow">NHÌN LẠI, KHÔNG ĐÁNH GIÁ</div><h2>Xu hướng gần đây</h2></div><span class="private-label">Chỉ trên thiết bị này</span></div><div id="mood-chart" class="mood-chart"></div><p id="mood-empty" class="muted">Các check-in của bạn sẽ xuất hiện ở đây.</p></div>
+      </section>
+
+      <section id="panel-screening" class="panel hidden">
+        <div class="eyebrow">CHECK-IN MÔ PHỎNG</div><h1>Dành vài phút để lắng nghe mình.</h1><p class="lede">Đây là luồng minh họa lấy cảm hứng từ PHQ-9/GAD-7, không phải bản câu hỏi chuẩn hóa, không chấm mức độ bệnh và không thay đánh giá chuyên môn.</p>
+        <div class="warning-card"><strong>Trước khi bắt đầu</strong><p>Nếu bạn đang nghĩ đến việc làm hại bản thân hoặc không muốn sống, bỏ qua biểu mẫu và xem <button id="screening-crisis-link" class="inline-link">hỗ trợ khẩn cấp</button> ngay.</p></div>
+        <div class="surface screener"><div class="segmented"><button class="segment active" data-scale="phq">Check-in cảm xúc (9 câu demo)</button><button class="segment" data-scale="gad">Check-in lo lắng (7 câu demo)</button></div><form id="screening-form"><div id="questions"></div><button class="primary-button" type="submit">Hoàn tất check-in</button></form><div id="screening-result" class="result-box hidden"></div></div>
+      </section>
+
+      <section id="panel-library" class="panel hidden">
+        <div class="eyebrow">THƯ VIỆN TỰ CHĂM SÓC</div><h1>Chọn điều phù hợp với bạn.</h1><p class="lede">Bạn có thể dừng bất cứ lúc nào. Những bài tập này là gợi ý hỗ trợ chung, không phải điều trị.</p><div id="resource-list" class="resource-grid"></div>
+      </section>
+
+      <section id="panel-clinical" class="panel hidden">
+        <div class="eyebrow">CHỈ DÀNH CHO MINH HỌA</div><h1>Công cụ an toàn lâm sàng</h1><p class="lede">Các quy tắc bên dưới chưa được kiểm định lâm sàng. Không dùng để loại trừ cấp cứu, chẩn đoán hay quyết định dùng thuốc.</p>
+        <div class="surface tool-card"><div class="tool-title"><span class="quick-icon peach">⌕</span><div><h2>Kiểm tra cờ đỏ triệu chứng</h2><p>Quy tắc từ khóa demo, không thay triage bởi nhân viên y tế.</p></div></div><form id="redflag-form"><label for="symptom-input">Nhập triệu chứng giả lập</label><textarea id="symptom-input" rows="3" placeholder="Ví dụ cho diễn tập: khó thở đột ngột"></textarea><button class="secondary-button" type="submit">Kiểm tra quy tắc demo</button><button id="redflag-example" class="text-button" type="button">Điền tình huống diễn tập</button></form><div id="redflag-result" class="result-box hidden"></div></div>
+        <div class="surface tool-card"><div class="tool-title"><span class="quick-icon lavender">Rx</span><div><h2>Kiểm tra tương tác thuốc</h2><p>Chỉ cặp dữ liệu tổng hợp DEMO-A / DEMO-B; không có dữ liệu thuốc thật.</p></div></div><form id="med-form"><label><input type="checkbox" name="med" value="DEMO-A"> DEMO-A (thuốc giả lập)</label><label><input type="checkbox" name="med" value="DEMO-B"> DEMO-B (thuốc giả lập)</label><label><input type="checkbox" name="med" value="medication-example"> Một tên thuốc bất kỳ (để xem cảnh báo giới hạn)</label><button class="secondary-button" type="submit">Chạy mô phỏng</button></form><div id="med-result" class="result-box hidden"></div></div>
+        <div class="surface tool-card"><div class="tool-title"><span class="quick-icon mint">{ }</span><div><h2>FHIR R4 · bản xem trước tổng hợp</h2><p>QuestionnaireResponse + Observation minh họa; không kết nối EHR.</p></div></div><button id="load-fhir" class="secondary-button">Tạo bản xem trước</button><pre id="fhir-output" class="code-output hidden"></pre><a class="source-link" href="https://hl7.org/fhir/R4/questionnaireresponse.html" target="_blank" rel="noopener">Đọc mô tả QuestionnaireResponse trong FHIR R4 ↗</a></div>
+      </section>
+
+      <section id="panel-inbox" class="panel hidden">
+        <div class="eyebrow">GIAO DIỆN CHUYÊN GIA · MÔ PHỎNG</div><h1>Hàng đợi cảnh báo</h1><p class="lede">Đây không phải hệ thống trực ca. Cảnh báo chỉ tồn tại trong bộ nhớ máy chủ demo và sẽ mất khi dừng app.</p><div class="inbox-toolbar"><div><span id="case-count" class="count-badge">0</span> cảnh báo</div><button id="refresh-cases" class="quiet-button">Làm mới</button></div><div id="case-list" class="case-list"></div><div id="case-empty" class="empty-state"><span>✳</span><strong>Chưa có cảnh báo mới</strong><p>Khi diễn tập phát hiện tín hiệu an toàn, cảnh báo sẽ xuất hiện ở đây.</p></div>
+      </section>
+
+      <footer class="page-footer"><span>An Tâm · VMEC-20 · demo nội bộ</span><span><a href="/api/health" target="_blank">Trạng thái máy chủ</a> · Dùng dữ liệu tổng hợp</span></footer>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="limits-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="limits-title"><div class="modal-card"><button id="close-modal" class="modal-close" aria-label="Đóng">×</button><div class="eyebrow">LƯU Ý AN TOÀN</div><h2 id="limits-title">Bản demo không phải dịch vụ y tế</h2><ul><li>Không chẩn đoán, kê đơn, trị liệu hay xác định bạn có an toàn hay không.</li><li>Không có chuyên gia theo dõi trực tiếp; “chuyển chuyên gia” chỉ tạo mục trong hàng đợi mô phỏng.</li><li>Không nhập thông tin nhận dạng hoặc bệnh sử thật. Chat không được lưu; nhật ký chỉ ở trình duyệt.</li><li>Nếu nguy hiểm tức thời, gọi <a href="tel:115">115 (cấp cứu y tế)</a> hoặc đến cơ sở cấp cứu gần nhất; nhờ người tin cậy ở cạnh bạn.</li></ul><p class="muted">Nguồn số khẩn cấp: <a href="https://www.gov.uk/government/publications/vietnam-mental-health-support-abroad/vietnam-mental-health-support-abroad" target="_blank" rel="noopener">UK FCDO — hỗ trợ sức khỏe tinh thần tại Việt Nam ↗</a></p><button id="accept-limits" class="primary-button">Mình đã hiểu</button></div></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

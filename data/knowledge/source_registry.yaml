@@ -1,0 +1,19 @@
+# Approved demo source registry
+# The app shows short derivative exercise descriptions and links to these sources.
+version: 1
+sources:
+  - id: who-stress-guide
+    title: Doing What Matters in Times of Stress
+    publisher: World Health Organization
+    url: https://www.who.int/publications/b/53604
+    use: Grounding and stress-management resource reference
+  - id: nhs-breathing
+    title: Breathing exercises for stress
+    publisher: NHS
+    url: https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/
+    use: Gentle breathing exercise reference
+  - id: vietnam-emergency-info
+    title: Mental health support for British nationals in Vietnam
+    publisher: UK Foreign, Commonwealth & Development Office
+    url: https://www.gov.uk/government/publications/vietnam-mental-health-support-abroad/vietnam-mental-health-support-abroad
+    use: Source for emergency contact information displayed in demo
