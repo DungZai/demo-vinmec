@@ -1,0 +1,18 @@
+# Bộ câu hỏi MÔ PHỎNG theo chủ đề PHQ-9; không phải bản chuẩn hóa tiếng Việt.
+# Điểm chỉ dùng để gợi ý gặp chuyên gia, không diễn giải thành mức độ bệnh.
+id: phq9
+title: Check-in tâm trạng (9 câu, mô phỏng)
+period: 2 tuần qua
+options: ["Không hề", "Vài ngày", "Hơn nửa số ngày", "Gần như mỗi ngày"]
+suggest_professional_at: 10
+safety_item: 9   # trả lời > 0 → bắt đầu hỏi lại C-SSRS + đưa vào hàng đợi review
+items:
+  - Bạn có thấy ít hứng thú với những việc thường làm không?
+  - Bạn có cảm thấy buồn, trống rỗng hoặc mất hy vọng không?
+  - Bạn có gặp khó khăn với giấc ngủ không?
+  - Bạn có thấy thiếu năng lượng trong ngày không?
+  - Bạn có nhận thấy thay đổi trong cảm giác thèm ăn không?
+  - Bạn có tự trách mình hoặc thấy mình không đủ tốt không?
+  - Bạn có khó tập trung vào việc đang làm không?
+  - Bạn có thấy mình chậm chạp hoặc bồn chồn hơn thường lệ không?
+  - Bạn có nghĩ đến việc làm tổn thương bản thân hoặc không muốn sống không?

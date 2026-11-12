@@ -1,0 +1,16 @@
+# Chỉ mục có verified: true mới được API trả về và hiển thị trên UI.
+# Frontend có bản sao 115 làm fallback khi mất kết nối backend (frontend/src/lib/hotlines.ts).
+version: 1
+hotlines:
+  - id: vn-emergency-115
+    name: Cấp cứu y tế
+    number: "115"
+    scope: Cấp cứu y tế toàn quốc. Không phải đường dây chuyên biệt về sức khỏe tinh thần.
+    source_id: vietnam-emergency-info
+    verified: true
+  - id: vn-mental-health-line
+    name: Đường dây hỗ trợ sức khỏe tinh thần
+    number: null
+    scope: TODO — lấy từ nguồn chính thức (Bộ Y tế / tổ chức vận hành), ghi rõ giờ trực.
+    source_id: null
+    verified: false

@@ -1,0 +1,12 @@
+# C-SSRS Screener — BẢN DIỄN GIẢI MÔ PHỎNG, chưa phải bản dịch chính thức.
+# Trước khi dùng thật: lấy bản tiếng Việt và điều kiện sử dụng từ Columbia Lighthouse Project.
+# Thứ tự hỏi (app/screening/cssrs.py): 1 → 2 → (nếu 2 = có) 3, 4, 5 → 6.
+version: 1
+simulated: true
+questions:
+  1: Trong tháng vừa qua, bạn có từng ước mình đã chết, hoặc ước có thể ngủ mà không thức dậy không?
+  2: Trong tháng vừa qua, bạn có thực sự nghĩ đến việc tự kết thúc cuộc sống của mình không?
+  3: Bạn có nghĩ đến cách mình có thể làm điều đó không?
+  4: Bạn có những suy nghĩ này và có phần nào ý định thực hiện chúng không?
+  5: Bạn đã bắt đầu lên kế hoạch chi tiết, và có định thực hiện kế hoạch đó không?
+  6: Trong 3 tháng qua, bạn có làm, bắt đầu làm hoặc chuẩn bị làm điều gì để kết thúc cuộc sống của mình không?

@@ -1,0 +1,15 @@
+# Bộ câu hỏi MÔ PHỎNG theo chủ đề GAD-7; không phải bản chuẩn hóa tiếng Việt.
+id: gad7
+title: Check-in lo âu (7 câu, mô phỏng)
+period: 2 tuần qua
+options: ["Không hề", "Vài ngày", "Hơn nửa số ngày", "Gần như mỗi ngày"]
+suggest_professional_at: 10
+safety_item: null
+items:
+  - Bạn có thấy căng thẳng hoặc bồn chồn khó thư giãn không?
+  - Bạn có khó kiểm soát những điều khiến mình lo lắng không?
+  - Bạn có lo lắng quá nhiều về nhiều việc không?
+  - Bạn có khó thả lỏng cơ thể không?
+  - Bạn có thấy bồn chồn đến mức khó ngồi yên không?
+  - Bạn có dễ cáu gắt hoặc khó chịu hơn thường lệ không?
+  - Bạn có cảm thấy lo sợ rằng điều xấu sắp xảy ra không?

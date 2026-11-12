@@ -1,8 +1,11 @@
-# Ánh xạ FHIR R4 minh họa
+# Ánh xạ HL7 FHIR R4 (ngoài phạm vi 14 ngày)
 
-`GET /api/fhir/preview` trả về Bundle tổng hợp chỉ để minh họa cấu trúc:
+Đây là hạng mục "nâng cao" của đề. Nhóm chỉ làm nếu còn thời gian sau khi L0–L4 hoàn tất.
 
-- `QuestionnaireResponse`: câu trả lời giả lập có liên kết tới `Patient/demo-user`.
-- `Observation`: tổng điểm mô phỏng.
+Dự kiến:
 
-Đây chưa phải dữ liệu lâm sàng, chưa xác thực theo profile/implementation guide và không được gửi lên EHR. FHIR R4 dùng Questionnaire/QuestionnaireResponse để biểu diễn biểu mẫu và câu trả lời; xem [đặc tả chính thức](https://hl7.org/fhir/R4/questionnaireresponse.html).
+- `QuestionnaireResponse` cho câu trả lời PHQ-9 / GAD-7 ([đặc tả R4](https://hl7.org/fhir/R4/questionnaireresponse.html))
+- `Observation` cho tổng điểm
+- `Flag` hoặc `RiskAssessment` cho ca Tier 3
+
+Vị trí code khi triển khai: `backend/app/integrations/fhir/`.

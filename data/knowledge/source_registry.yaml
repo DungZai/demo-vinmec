@@ -1,19 +1,24 @@
-# Approved demo source registry
-# The app shows short derivative exercise descriptions and links to these sources.
+# Sổ đăng ký nguồn cho L2 (Neo4j). Chỉ nguồn có trong file này mới được nạp vào graph.
+# review.status:
+#   demo     — nhóm đã đọc và tóm tắt, được dùng trong môi trường dev/test
+#   clinical — chuyên gia sức khỏe tinh thần đã duyệt, bắt buộc khi APP_ENV=prod
 version: 1
 sources:
   - id: who-stress-guide
     title: Doing What Matters in Times of Stress
-    publisher: World Health Organization
+    org: World Health Organization
     url: https://www.who.int/publications/b/53604
-    use: Grounding and stress-management resource reference
+    use: Grounding và kỹ năng quản lý căng thẳng
+    review: {status: demo, reviewer: null}
   - id: nhs-breathing
     title: Breathing exercises for stress
-    publisher: NHS
+    org: NHS
     url: https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/
-    use: Gentle breathing exercise reference
+    use: Bài thở nhẹ nhàng
+    review: {status: demo, reviewer: null}
   - id: vietnam-emergency-info
     title: Mental health support for British nationals in Vietnam
-    publisher: UK Foreign, Commonwealth & Development Office
+    org: UK Foreign, Commonwealth & Development Office
     url: https://www.gov.uk/government/publications/vietnam-mental-health-support-abroad/vietnam-mental-health-support-abroad
-    use: Source for emergency contact information displayed in demo
+    use: Nguồn số cấp cứu y tế 115 hiển thị trong template khủng hoảng
+    review: {status: demo, reviewer: null}

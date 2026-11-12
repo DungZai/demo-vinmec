@@ -1,0 +1,13 @@
+id: emotion-journal
+name: Nhật ký cảm xúc ngắn
+type: journaling
+duration_min: 5
+source_id: who-stress-guide
+helps_with: [căng thẳng, buồn bã, suy nghĩ lặp lại]
+summary: >-
+  Ghi lại ngắn gọn điều đã xảy ra và cảm xúc đi kèm để nhìn rõ hơn điều đang diễn ra bên trong.
+steps:
+  - Chuyện gì vừa xảy ra?
+  - Cảm xúc nào đang có mặt, mạnh khoảng bao nhiêu trên thang 0-10?
+  - Suy nghĩ nào xuất hiện cùng cảm xúc đó?
+  - Một việc nhỏ, dễ làm, bạn muốn thử tiếp theo là gì?

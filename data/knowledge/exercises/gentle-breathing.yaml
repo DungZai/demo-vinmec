@@ -1,0 +1,14 @@
+id: gentle-breathing
+name: Thở chậm, nhẹ nhàng
+type: breathing
+duration_min: 3
+source_id: nhs-breathing
+helps_with: [căng thẳng, lo âu, mất ngủ]
+summary: >-
+  Bài thở theo nhịp dễ chịu của bạn, giúp cơ thể dịu lại khi căng thẳng.
+steps:
+  - Ngồi hoặc nằm ở tư thế thoải mái, thả lỏng vai.
+  - Hít vào nhẹ nhàng qua mũi, không gắng sức.
+  - Thở ra chậm qua miệng.
+  - Lặp lại trong 3 đến 5 phút; không nín thở.
+  - Dừng lại nếu thấy chóng mặt hoặc khó chịu.

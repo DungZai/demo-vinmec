@@ -1,0 +1,33 @@
+# L4 · Output guard — chạy bằng code sau L3. Vi phạm → sinh lại 1 lần → template fallback.
+version: 1
+# Regex (không phân biệt hoa thường) cho câu mang tính chẩn đoán.
+diagnosis_patterns:
+  - 'bạn\s+(đang\s+|có\s+(vẻ|lẽ|thể)\s+|chắc\s+(là\s+)?)?(bị|mắc)\s+(chứng\s+|bệnh\s+)?(trầm cảm|rối loạn|lo âu lan tỏa|lưỡng cực|tâm thần phân liệt|ptsd|ocd|adhd)'
+  - 'chẩn đoán (của )?bạn là'
+  - 'you (have|are suffering from) (depression|anxiety disorder|bipolar|ptsd)'
+# Tên thuốc (generic và biệt dược hay gặp). Bổ sung theo danh mục do chuyên gia cung cấp.
+medication_terms:
+  - sertraline
+  - fluoxetine
+  - escitalopram
+  - paroxetine
+  - venlafaxine
+  - mirtazapine
+  - amitriptyline
+  - alprazolam
+  - xanax
+  - diazepam
+  - seduxen
+  - lorazepam
+  - clonazepam
+  - zolpidem
+  - quetiapine
+  - olanzapine
+  - lithium
+  - thuốc ngủ
+  - thuốc an thần
+  - thuốc chống trầm cảm
+dosage_patterns:
+  - '\d+\s?(mg|mcg|ml|viên)\b'
+  - 'liều\s+(dùng|lượng)'
+disclaimer_marker: "không thay thế chuyên gia"

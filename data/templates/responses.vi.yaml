@@ -1,0 +1,30 @@
+# Câu trả lời cố định (D6). LLM không bao giờ sinh nội dung ở các tình huống này.
+version: 1
+disclaimer: >-
+  An Tâm là công cụ hỗ trợ tự chăm sóc, không chẩn đoán và không thay thế chuyên gia.
+crisis_mental: >-
+  Cảm ơn bạn đã nói ra, mình biết điều đó không dễ. Sự an toàn của bạn lúc này là điều quan trọng nhất.
+  Nếu bạn có thể làm hại bản thân ngay bây giờ, hãy gọi 115 hoặc đến khoa cấp cứu gần nhất.
+  Nếu được, hãy ở gần một người bạn tin tưởng và cất xa những vật có thể gây nguy hiểm.
+  Mình đã báo cho chuyên gia trong hệ thống để họ xem xét hỗ trợ bạn.
+crisis_medical: >-
+  Những dấu hiệu bạn mô tả có thể cần được đánh giá y tế khẩn cấp. Mình không thể kiểm tra hay loại trừ cấp cứu.
+  Hãy gọi 115 hoặc đến cơ sở cấp cứu gần nhất ngay, và nhờ người ở gần hỗ trợ bạn.
+contact_offer: >-
+  Bạn đã đồng ý cho phép liên hệ người thân khi khẩn cấp. Chuyên gia có thể dùng thông tin này để kết nối.
+clarify_intro: >-
+  Cảm ơn bạn đã chia sẻ. Mình muốn hỏi thêm vài câu ngắn để hiểu bạn đang thế nào và hỗ trợ cho phù hợp.
+  Bạn có thể trả lời "có" hoặc "không".
+clarify_repeat: >-
+  Mình chưa chắc đã hiểu câu trả lời. Bạn có thể trả lời "có" hoặc "không" cho câu hỏi này nhé.
+clarify_done: >-
+  Cảm ơn bạn đã trả lời thật lòng. Một chuyên gia sẽ xem lại cuộc trò chuyện để hỗ trợ thêm nếu cần.
+  Mình vẫn ở đây; bạn muốn kể tiếp điều gì đang diễn ra không?
+yellow_card: >-
+  Nếu lúc nào bạn cảm thấy không an toàn, hãy gọi 115 hoặc đến cơ sở cấp cứu gần nhất.
+no_docs: >-
+  Mình chưa có tài liệu đã kiểm chứng phù hợp với điều bạn hỏi, nên mình không muốn đoán.
+  Mình có thể cùng bạn thử một bài thở hoặc grounding ngắn, hoặc bạn có thể trao đổi với chuyên gia.
+fallback: >-
+  Mình muốn chắc rằng mọi điều mình nói đều an toàn và có nguồn rõ ràng, nên mình xin trả lời ngắn:
+  mình đang lắng nghe bạn. Bạn có muốn thử một bài tập tự chăm sóc trong thư viện, hoặc kể thêm điều đang diễn ra không?

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Môi trường & bí mật
+.env
+.env.local
+!.env.example
+
+# Kết quả đánh giá sinh ra khi chạy
+data/eval/reports/*
+!data/eval/reports/.gitkeep

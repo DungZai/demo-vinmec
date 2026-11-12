@@ -1,0 +1,76 @@
+# L0 · Lớp A — từ điển cụm từ. Không bao giờ tắt lớp này.
+# Mỗi thay đổi phải có người duyệt và chạy lại tests/safety.
+#
+# groups:
+#   danger            → Tier 3 ngay, không chờ classifier
+#   indirect          → tối thiểu Tier 2 (hỏi lại theo C-SSRS)
+#   medical_red_flag  → Tier 3 với template cấp cứu y tế
+#
+# plain_ok: false — dạng không dấu dễ trùng với cụm từ vô hại ("tu tu" ~ "từ từ"),
+# nên chỉ so khớp không dấu khi toàn bộ tin nhắn được gõ không dấu.
+version: 1
+reviewed_by: null  # TODO: chuyên gia duyệt trước khi dùng với người thật
+groups:
+  danger:
+    - {text: "tự tử", plain_ok: false}
+    - tự sát
+    - không muốn sống
+    - không muốn sống nữa
+    - không muốn tồn tại
+    - kết thúc cuộc đời
+    - kết thúc cuộc sống
+    - kết liễu bản thân
+    - {text: "tự hại", plain_ok: false}
+    - làm hại bản thân
+    - làm tổn thương bản thân
+    - cắt tay
+    - nhảy lầu
+    - kill myself
+    - suicide
+    - end my life
+    - self harm
+    - hurt myself
+  indirect:
+    # "muốn chết" thường dùng để cường điệu ("mệt muốn chết"), nên để ở Tier 2 và hỏi lại.
+    - muốn chết
+    - chán sống
+    - muốn ngủ không dậy
+    - ngủ một giấc không dậy
+    - biến mất cho xong
+    - biến mất mãi mãi
+    - không còn lý do để sống
+    - sống không còn ý nghĩa
+    - mọi người sẽ tốt hơn nếu không có mình
+    - là gánh nặng cho mọi người
+    - want to die
+    - better off without me
+  medical_red_flag:
+    - đau ngực dữ dội
+    - đau thắt ngực
+    - khó thở
+    - không thở được
+    - liệt nửa người
+    - méo miệng
+    - co giật
+    - bất tỉnh
+    - ngất xỉu
+    - chảy máu không cầm
+    - uống quá liều
+    - chest pain
+    - shortness of breath
+    - seizure
+    - overdose
+# Teencode được thay theo từng từ trước khi so khớp.
+teencode:
+  ko: không
+  k: không
+  kh: không
+  khum: không
+  hok: không
+  hem: không
+  hong: không
+  mún: muốn
+  mun: muốn
+  chit: chết
+  chớt: chết
+  j: gì
